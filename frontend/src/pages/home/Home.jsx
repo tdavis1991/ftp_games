@@ -22,7 +22,7 @@ const Home = () => {
         spacing={2} 
       >
         {data?.map((game, i) => (
-          <Grid item xs={4}>
+          <Grid item xs={12} md={6} lg={4} xl={3}>
             <GameCard 
               key={game?.title}
               image={game?.thumbnail}

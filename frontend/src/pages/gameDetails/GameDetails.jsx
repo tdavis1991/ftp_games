@@ -1,9 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { IoGameControllerOutline, IoCalendarOutline, IoGridOutline } from 'react-icons/io5';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import { MdOutlineExpandMore } from "react-icons/md";
+
+
 import { useGetGameDetailsQuery } from '../../redux/services/ftpDb';
 import Screenshot from '../../components/screenshot/Screenshot';
-
 import './gameDetails.css';
 import gameImg from '../../assets/images/tincho-franco-AksmkMQTdik-unsplash.jpg'
 
@@ -40,9 +48,46 @@ const GameDetails = () => {
           <p>{data?.description}</p>
         </div>
       </div>
-      <div className='gameDetails__bottom'></div>
+      <div className='gameDetails__bottom'>
+        <a href={`${data?.game_url}`}><Button variant="contained">Website</Button></a>
+        <Accordion className='gameDetails__sys'>
+          <AccordionSummary
+            expandIcon={<MdOutlineExpandMore />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>Minimum System Requirements</Typography>
+          </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                OS: {data?.minimum_system_requirements?.os}
+              </Typography>
+            </AccordionDetails>
+            <AccordionDetails>
+              <Typography>
+                Processor: {data?.minimum_system_requirements?.processor}
+              </Typography>
+            </AccordionDetails><AccordionDetails>
+              <Typography>
+                Memory: {data?.minimum_system_requirements?.memory}
+              </Typography>
+            </AccordionDetails><AccordionDetails>
+              <Typography>
+                Graphics: {data?.minimum_system_requirements?.graphics}
+              </Typography>
+            </AccordionDetails><AccordionDetails>
+              <Typography>
+                Storage: {data?.minimum_system_requirements?.storage}
+              </Typography>
+            </AccordionDetails>
+        </Accordion>
+      </div>
     </div>
   )
 }
 
-export default GameDetails
+
+export default GameDetails;
+
+
+

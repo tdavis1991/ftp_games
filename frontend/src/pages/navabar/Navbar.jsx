@@ -21,7 +21,7 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            FTP Games
+            <a href='/' style={{ textDecoration: 'none', color: 'white', fontWeight: 'bold' }}>FTP Games</a>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
