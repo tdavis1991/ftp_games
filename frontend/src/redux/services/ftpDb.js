@@ -5,7 +5,7 @@ export const ftpDb = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://free-to-play-games-database.p.rapidapi.com/api',
     prepareHeaders: (headers) => {
-      headers.set('X-RapidAPI-Key', '8a5c072e31mshe08f9e5109737dcp18f987jsn00be8a004651');
+      headers.set('X-RapidAPI-Key', import.meta.env.VITE_API_KEY);
 
       return headers;
     },
@@ -17,7 +17,6 @@ export const ftpDb = createApi({
   }),
 });
 
-console.log('API KEY', import.meta.env.API_KEY)
 export const {
   useGetAllGamesQuery,
   useGetGameDetailsQuery,

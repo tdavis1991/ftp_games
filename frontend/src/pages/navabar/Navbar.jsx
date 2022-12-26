@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" position='fixed'>
         <Toolbar>
           <Typography
             variant="h6"

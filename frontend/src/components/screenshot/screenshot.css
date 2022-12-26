@@ -1,0 +1,16 @@
+.screenshot__container:hover {
+  cursor: pointer;
+}
+
+.screenshot__image {
+  height: 150px;
+  width: 150px;
+}
+
+.screenshot__modal {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  width: 800px;
+  height: 600px;
+}

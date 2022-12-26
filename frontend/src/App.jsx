@@ -13,12 +13,15 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <img className='game__banner' src='https://wallpaper.dog/large/20433611.jpg' alt='game banner' />
-      <Routes>
-        <Route path='/' element={Home} />
-        <Route path='/category' element={Category} />
-        <Route path='/game:id' element={GameDetails} />
-      </Routes>
+      {/* <img className='game__banner' src='https://wallpaper.dog/large/20433611.jpg' alt='game banner' /> */}
+      <div className='App__content'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/category' element={<Category />} />
+          <Route path='/game/:id' element={<GameDetails />} />
+        </Routes>
+      </div>
+
     </div>
   )
 }
