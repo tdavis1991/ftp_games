@@ -24,17 +24,22 @@ const GameDetails = () => {
   return (
     <div className='gameDetails__container'>
       <div className='gameDetails__top'>
-        <img 
-          src={data?.thumbnail}
-          alt='game'
-          className='gameDetails__image'
-        />
-        <div className='gameDetails__screenshot'>
-          <h2>Screenshots</h2>
-          <div className='gameDetails__screenshots'>
-            {data?.screenshots?.map((screenshot, i) => (
-              <Screenshot image={screenshot?.image} />
-            ))}
+        <h1>{data?.title}</h1>
+        <div className='gameDetails__top__content'>
+          <img 
+            src={data?.thumbnail}
+            // src={gameImg}
+            alt='game'
+            className='gameDetails__image'
+          />
+          <div className='gameDetails__screenshot'>
+            <h2>Screenshots</h2>
+            <div className='gameDetails__screenshots'>
+              {data?.screenshots?.map((screenshot, i) => (
+                <Screenshot image={screenshot?.image} />
+                // <Screenshot image={gameImg} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -67,15 +72,18 @@ const GameDetails = () => {
               <Typography>
                 Processor: {data?.minimum_system_requirements?.processor}
               </Typography>
-            </AccordionDetails><AccordionDetails>
+            </AccordionDetails>
+            <AccordionDetails>
               <Typography>
                 Memory: {data?.minimum_system_requirements?.memory}
               </Typography>
-            </AccordionDetails><AccordionDetails>
+            </AccordionDetails>
+            <AccordionDetails>
               <Typography>
                 Graphics: {data?.minimum_system_requirements?.graphics}
               </Typography>
-            </AccordionDetails><AccordionDetails>
+            </AccordionDetails>
+            <AccordionDetails>
               <Typography>
                 Storage: {data?.minimum_system_requirements?.storage}
               </Typography>

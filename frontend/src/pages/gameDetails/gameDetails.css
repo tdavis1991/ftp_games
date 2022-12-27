@@ -8,10 +8,22 @@
 
 .gameDetails__top {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 10px 10px 0 0;
+}
+
+.gameDetails__top h1 {
+  text-align: center;
+  color: white;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.gameDetails__top__content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .gameDetails__screenshot {

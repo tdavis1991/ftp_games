@@ -1,0 +1,10 @@
+.pagination__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.MuiPagination-root li {
+  color: white;
+}
