@@ -2,18 +2,19 @@ import { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 
 import './App.css';
-import Navbar from './pages/navabar/Navbar';
+import Navbar from './components/navabar/Navbar';
 import Home from './pages/home/Home';
 import Category from './pages/category/Category';
 import GameDetails from './pages/gameDetails/GameDetails';
+import Footer from './components/footer/Footer';
+import DrawerNavbar from './components/drawerNavbar/DrawerNavbar';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
       <Navbar />
-      {/* <img className='game__banner' src='https://wallpaper.dog/large/20433611.jpg' alt='game banner' /> */}
+      <DrawerNavbar />
       <div className='App__content'>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -21,9 +22,9 @@ function App() {
           <Route path='/game/:id' element={<GameDetails />} />
         </Routes>
       </div>
-
+      <Footer />
     </div>
   )
 }
 
-export default App
+export default App;

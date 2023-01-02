@@ -1,19 +1,15 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { useMediaQuery, Button, Typography, Toolbar, CssBaseline, Box, AppBar } from '@mui/material';
 import { IoGameControllerOutline } from 'react-icons/io5';
 
 
 const navItems = ['Home', 'Category', 'About'];
 
 const Navbar = () => {
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: isMobile ? 'none' : 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" position='fixed'>
         <Toolbar>

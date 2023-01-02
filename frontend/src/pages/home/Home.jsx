@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import {Grid, Box} from '@mui/material';
+import { Grid, Box, CircularProgress } from '@mui/material';
 import axios from 'axios';
 
 import gameImg from '../../assets/images/tincho-franco-AksmkMQTdik-unsplash.jpg'
 import GameCard from '../../components/gameCard/GameCard';
 import Paginate from '../../components/pagination/Pagination';
-// import { useGetAllGamesQuery } from '../../redux/services/ftpDb';
+import './home.css';
 
 
 const Home = () => {
@@ -31,17 +31,17 @@ const Home = () => {
 
     fetchGames();
   }, []);
+  console.log(games, 'DATA')
 
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = games.slice(indexOfFirstGame, indexOfLastGame);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
-
-  console.log('DATA', games)
   
   return (
     <div>
+      <img className='game__banner' src='https://wallpaper.dog/large/20433611.jpg' alt='game banner' />
       <Box
         display='flex'
         justifyContent='center'
@@ -66,7 +66,6 @@ const Home = () => {
       </Box>
       <Paginate totalGames={games.length} gamesPerPage={gamesPerPage} setCurrentPage={setCurrentPage} />
     </div>
-
   );
 }
 

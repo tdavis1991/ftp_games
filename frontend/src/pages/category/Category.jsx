@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
+import { Box, Grid, InputLabel, MenuItem, FormControl, Select, Button } from '@mui/material'
 import { display } from '@mui/system';
 import axios from 'axios';
 
 import GameCard from '../../components/gameCard/GameCard';
 import Paginate from '../../components/pagination/Pagination';
 import { platforms, categories, sort_by } from '../../assets/constants';
+import './category.css'
 
 const Category = () => {
 
@@ -59,11 +54,10 @@ const Category = () => {
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = games.slice(indexOfFirstGame, indexOfLastGame);
 
-  console.log('GAMES', games)
-
 
   return (  
     <div style={{ width: '100%' }}>
+      <img className='game__banner' src='https://wallpaper.dog/large/20433611.jpg' alt='game banner' />
       <form style={{ width: '100%', marginBottom: '2rem' }} onSubmit={handleSubmit}>
         <Box sx={{ minWidth: 120, display: 'flex', width: '100%', justifyContent: 'space-between'}}>
           <FormControl sx={{ width: '25%' }}>

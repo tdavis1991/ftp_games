@@ -14,11 +14,11 @@ const Paginate = ({gamesPerPage, totalGames, setCurrentPage}) => {
   return (
     <div className='pagination__container'>
       <Pagination 
-        sx={{ color: 'white' }}
         count={pageNumber}
         color='primary'
         size='large'
         onChange={handleChange}
+        variant='text'
       />
     </div>
   )
